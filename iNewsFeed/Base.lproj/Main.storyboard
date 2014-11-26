@@ -154,7 +154,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ffl-bm-l51">
-                                <rect key="frame" x="0.0" y="28" width="600" height="572"/>
+                                <rect key="frame" x="0.0" y="32" width="600" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -167,12 +167,12 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ffl-bm-l51" firstAttribute="leading" secondItem="5x8-Tr-oTu" secondAttribute="leading" id="0yN-cS-Kwq"/>
+                            <constraint firstItem="Ffl-bm-l51" firstAttribute="top" secondItem="pKy-hM-tEK" secondAttribute="bottom" constant="4" id="CtX-h5-h0U"/>
                             <constraint firstItem="pKy-hM-tEK" firstAttribute="leading" secondItem="5x8-Tr-oTu" secondAttribute="leading" id="E60-Rx-B0Q"/>
                             <constraint firstItem="pKy-hM-tEK" firstAttribute="top" secondItem="5x8-Tr-oTu" secondAttribute="top" id="H1X-c2-IBu"/>
                             <constraint firstItem="dvd-rC-zH3" firstAttribute="top" secondItem="Ffl-bm-l51" secondAttribute="bottom" id="TSK-rz-dun"/>
                             <constraint firstAttribute="trailing" secondItem="Ffl-bm-l51" secondAttribute="trailing" id="VPC-T7-L9k"/>
                             <constraint firstAttribute="trailing" secondItem="pKy-hM-tEK" secondAttribute="trailing" id="nCO-Gm-16A"/>
-                            <constraint firstItem="Ffl-bm-l51" firstAttribute="top" secondItem="pKy-hM-tEK" secondAttribute="bottom" id="qEK-y3-tLS"/>
                         </constraints>
                     </view>
                     <connections>

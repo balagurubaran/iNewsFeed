@@ -6,29 +6,33 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>DF2BA583-20F4-4FE7-9ABE-B50F66E90715</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iNewsFeed</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>8A4D9C68CF34FF414C2CC658305DC100F8F92775</key>
+		<key>77E81678CF966E91E126B365ED01795A7E528C69</key>
 		<string>https://github.com/balagurubaran/iNewsFeed.git</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iNewsFeed.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>8A4D9C68CF34FF414C2CC658305DC100F8F92775</key>
-		<string>iNewsFeed/</string>
+		<key>77E81678CF966E91E126B365ED01795A7E528C69</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/balagurubaran/iNewsFeed.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>8A4D9C68CF34FF414C2CC658305DC100F8F92775</string>
+	<string>77E81678CF966E91E126B365ED01795A7E528C69</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>8A4D9C68CF34FF414C2CC658305DC100F8F92775</string>
+			<string>77E81678CF966E91E126B365ED01795A7E528C69</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iNewsFeed</string>
 		</dict>
