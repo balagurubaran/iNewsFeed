@@ -14,6 +14,7 @@ var FeedDSettingsFiltered = NSMutableArray()
 
 class FeedSettingData{
     var feedSettingCategory : NSString = ""
+    var feedSettingURL: NSString = ""
     var feedSettingName: NSString = ""
 }
 
@@ -28,7 +29,9 @@ class FeedSettingsDataParser{
             for eachData in eachDataArray{
                 var tempSettingFeedData = FeedSettingData();
                 tempSettingFeedData.feedSettingCategory = key as NSString
-                tempSettingFeedData.feedSettingName = eachData as NSString
+                let URLDetail:NSArray = eachData.componentsSeparatedByString(",")
+                tempSettingFeedData.feedSettingURL = URLDetail[1] as NSString
+                tempSettingFeedData.feedSettingName = URLDetail[2] as NSString
                 FeedSettingsDataAllObject.addObject(tempSettingFeedData)
             }
         }

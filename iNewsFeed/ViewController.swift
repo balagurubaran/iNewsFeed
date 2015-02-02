@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController,UICollectionViewDataSource{
+class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
+{
 
     @IBOutlet weak var topBarView: UIView!
     @IBOutlet var MainRSSFeedTableView: UITableView!
@@ -17,9 +18,9 @@ class ViewController: UIViewController,UICollectionViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         let fm = FileManger()
-        var fielContent : NSString =  fm.ReadFile("Settings")
+        var fileContent : NSString =  fm.ReadFile("Settings")
         
-        feedDataParserObejct.parseSeetingsJsonData(fielContent)
+        feedDataParserObejct.parseSeetingsJsonData(fileContent)
         
         topBarView.layer.borderColor = UIColor.blackColor().CGColor
         topBarView.layer.borderWidth = 1.5;
@@ -43,7 +44,7 @@ class ViewController: UIViewController,UICollectionViewDataSource{
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath) as CollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("iPhoneCollectionViewCell", forIndexPath: indexPath) as CollectionViewCell
         
         
         //cell.layer.masksToBounds = true;
@@ -60,8 +61,7 @@ class ViewController: UIViewController,UICollectionViewDataSource{
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 18
+        return 0
     }
-
 }
 
