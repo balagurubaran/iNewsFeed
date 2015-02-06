@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		784BD6811A7E121C00D7CDF6 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784BD6801A7E121C00D7CDF6 /* SettingsTableViewCell.swift */; };
 		787580911A250EE200BC6245 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787580901A250EE200BC6245 /* CollectionViewCell.swift */; };
 		787580971A25130D00BC6245 /* appicon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 787580931A25130D00BC6245 /* appicon.jpg */; };
 		787580981A25130D00BC6245 /* holder.png in Resources */ = {isa = PBXBuildFile; fileRef = 787580941A25130D00BC6245 /* holder.png */; };
@@ -36,7 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		784BD6801A7E121C00D7CDF6 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		787580901A250EE200BC6245 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewCell.swift; path = CustomClasses/CollectionViewCell.swift; sourceTree = "<group>"; };
 		787580931A25130D00BC6245 /* appicon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = appicon.jpg; sourceTree = "<group>"; };
 		787580941A25130D00BC6245 /* holder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = holder.png; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 				95E0534B1A23427D00D37F32 /* AppDelegate.swift */,
 				95E0534D1A23427D00D37F32 /* ViewController.swift */,
 				78C4D7BA1A23CB2000DD3BB3 /* SettingsViewController.swift */,
-				784BD6801A7E121C00D7CDF6 /* SettingsTableViewCell.swift */,
 				95E0534F1A23427D00D37F32 /* Main.storyboard */,
 				95E053521A23427D00D37F32 /* Images.xcassets */,
 				95E053541A23427D00D37F32 /* LaunchScreen.xib */,
@@ -267,7 +264,6 @@
 				95E0534E1A23427D00D37F32 /* ViewController.swift in Sources */,
 				787580911A250EE200BC6245 /* CollectionViewCell.swift in Sources */,
 				95E0534C1A23427D00D37F32 /* AppDelegate.swift in Sources */,
-				784BD6811A7E121C00D7CDF6 /* SettingsTableViewCell.swift in Sources */,
 				78C4D7BB1A23CB2000DD3BB3 /* SettingsViewController.swift in Sources */,
 				78C4D7B71A23BAC900DD3BB3 /* FeedData.swift in Sources */,
 			);
@@ -398,7 +394,7 @@
 				INFOPLIST_FILE = iNewsFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f676f306-1d5d-4271-9667-a086a0f80d06";
+				PROVISIONING_PROFILE = "b8b7b8c3-a9d6-4732-a612-1c2324f8ac5d";
 			};
 			name = Debug;
 		};
@@ -410,7 +406,7 @@
 				INFOPLIST_FILE = iNewsFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f676f306-1d5d-4271-9667-a086a0f80d06";
+				PROVISIONING_PROFILE = "b8b7b8c3-a9d6-4732-a612-1c2324f8ac5d";
 			};
 			name = Release;
 		};

@@ -7,33 +7,39 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
-{
+var selectedPaper:FeedSettingData = FeedSettingData()
+class ViewController: UIViewController,UIWebViewDelegate{
 
     @IBOutlet weak var topBarView: UIView!
-    @IBOutlet var MainRSSFeedTableView: UITableView!
+    
     let fm = FileManger()
     let feedDataParserObejct = FeedSettingsDataParser()
+    
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var webView: UIWebView!
+    @IBOutlet var paperName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let fm = FileManger()
         var fileContent : NSString =  fm.ReadFile("Settings")
         
-        feedDataParserObejct.parseSeetingsJsonData(fileContent)
+        webView.scalesPageToFit = true
+        webView.contentMode = UIViewContentMode.ScaleToFill
         
-        topBarView.layer.borderColor = UIColor.blackColor().CGColor
-        topBarView.layer.borderWidth = 1.5;
-       /* topBarView.layer.shadowColor = UIColor.blackColor().CGColor
-        topBarView.layer.shadowOpacity = 0.8
-        topBarView.layer.shadowRadius = 1.0
-        topBarView.layer.shadowOffset = CGSize(width: 1.0,height: 1.0)
-        */
-        // Do any additional setup after loading the view, typically from a nib.
+        feedDataParserObejct.parseSeetingsJsonData(fileContent)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"loadPage", name: "loadPage", object: nil)
+        selectedPaper = FeedSettingsDataAllObject.objectAtIndex(0) as FeedSettingData
+        loadPage()
     }
     
-    var items: [String] = ["We", "Heart", "Swift"]
-
+    func loadPage(){
+        paperName.text = selectedPaper.feedSettingName
+        activityIndicator.startAnimating()
+        var url:NSURL = NSURL(string: selectedPaper.feedSettingURL)!
+        let URLRequest:NSURLRequest = NSURLRequest(URL: url)
+        webView.loadRequest(URLRequest)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -42,26 +48,12 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("iPhoneCollectionViewCell", forIndexPath: indexPath) as CollectionViewCell
-        
-        
-        //cell.layer.masksToBounds = true;
-        cell.layer.cornerRadius = 6;
-        
-        cell.feedDescreption.text = "    I created a collection view very simple to an Apple collection view sample project. I have a collection view in a view controller in storyboard, and set a label inside the collection view cell in the top right part of the collection view"
-        var image : UIImage = UIImage(named: "appicon.jpg")!
-        cell.feedImage.image = image
-        return cell
-    }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+    func webViewDidFinishLoad(webView: UIWebView) {
+        activityIndicator.stopAnimating()
     }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
+        activityIndicator.stopAnimating()
     }
 }
 

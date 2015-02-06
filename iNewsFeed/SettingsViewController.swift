@@ -10,17 +10,23 @@ import UIKit
 
 var filteredSettingsData:NSArray = NSArray()
 
-
 class SettingsViewController:UIViewController,UITableViewDataSource,UITableViewDelegate{
+    @IBOutlet var segementControll: UISegmentedControl!
    
     var feedSettingsDataObject = FeedSettingsDataParser()
     @IBOutlet weak var SettingsTableView: UITableView!
     
+    override func viewDidLoad() {
+        segementControll.setEnabled(true, forSegmentAtIndex: 0);
+        var theTitle : NSString = segementControll.titleForSegmentAtIndex(segementControll.selectedSegmentIndex)!
+        SettingsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        filteredSettingsData = feedSettingsDataObject.getAllDataForSettings(theTitle)
+        SettingsTableView.reloadData()
+    }
+    
     @IBAction func SettingsSegmentSelected(sender: UISegmentedControl) {
         var theTitle : NSString = sender.titleForSegmentAtIndex(sender.selectedSegmentIndex)!
         filteredSettingsData = feedSettingsDataObject.getAllDataForSettings(theTitle)
-        SettingsTableView.registerClass(SettingsTableViewCell.self, forCellReuseIdentifier: "SettingsTableViewCell")
-        
         SettingsTableView.reloadData()
     }
     
@@ -30,21 +36,20 @@ class SettingsViewController:UIViewController,UITableViewDataSource,UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell =  tableView.dequeueReusableCellWithIdentifier("SettingsTableViewCell") as? SettingsTableViewCell
-            //
-       /* if(cell == nil){
-            cell = SettingsTableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "SettingsTableViewCell")
-        }*/
-        let feedData: FeedSettingData = filteredSettingsData[indexPath.row] as FeedSettingData
-        //cell?.contentView.viewWithTag(<#tag: Int#>)
-        (cell?.contentView.viewWithTag(10) as UILabel).text = feedData.feedSettingName
-        //cell?.textLabel?.text = feedData.feedSettingName
-        ///cell?.updateSettingsTableViewCell(feedData.feedSettingName, status: true);
-        return cell!
+        var cell: UITableViewCell = (tableView.dequeueReusableCellWithIdentifier("cell")) as UITableViewCell
+        
+        var feedData:FeedSettingData = filteredSettingsData.objectAtIndex(indexPath.row) as FeedSettingData
+        cell.textLabel?.text = feedData.feedSettingName
+        return cell
+        
     }
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        println("You selected cell #\(indexPath.row)!")
+        selectedPaper = filteredSettingsData.objectAtIndex(indexPath.row) as FeedSettingData
+        NSNotificationCenter.defaultCenter().postNotificationName("loadPage", object: nil)
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            
+        })
     }
 
 }
