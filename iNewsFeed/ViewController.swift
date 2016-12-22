@@ -22,22 +22,22 @@ class ViewController: UIViewController,UIWebViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         let fm = FileManger()
-        var fileContent : NSString =  fm.ReadFile("Settings")
+        let fileContent : NSString =  fm.ReadFile("Settings") as NSString
         
         webView.scalesPageToFit = true
-        webView.contentMode = UIViewContentMode.ScaleToFill
+        webView.contentMode = UIViewContentMode.scaleToFill
         
-        feedDataParserObejct.parseSeetingsJsonData(fileContent)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"loadPage", name: "loadPage", object: nil)
-        selectedPaper = FeedSettingsDataAllObject.objectAtIndex(0) as FeedSettingData
+        feedDataParserObejct.parseSettingsJsonData(fileContent)
+        NotificationCenter.default.addObserver(self, selector:#selector(ViewController.loadPage), name: NSNotification.Name(rawValue: "loadPage"), object: nil)
+        selectedPaper = FeedSettingsDataAllObject.object(at: 0) as! FeedSettingData
         loadPage()
     }
     
     func loadPage(){
-        paperName.text = selectedPaper.feedSettingName
+        paperName.text = selectedPaper.feedSettingName as String
         activityIndicator.startAnimating()
-        var url:NSURL = NSURL(string: selectedPaper.feedSettingURL)!
-        let URLRequest:NSURLRequest = NSURLRequest(URL: url)
+        let url:URL = URL(string: selectedPaper.feedSettingURL as String)!
+        let URLRequest:Foundation.URLRequest = Foundation.URLRequest(url: url)
         webView.loadRequest(URLRequest)
     }
     override func didReceiveMemoryWarning() {
@@ -45,14 +45,14 @@ class ViewController: UIViewController,UIWebViewDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
-    func webViewDidFinishLoad(webView: UIWebView) {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
         activityIndicator.stopAnimating()
     }
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         activityIndicator.stopAnimating()
     }
 }

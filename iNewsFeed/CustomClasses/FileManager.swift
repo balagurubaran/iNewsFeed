@@ -11,16 +11,22 @@ import Foundation
 
 class FileManger{
     
-    func ReadFile(fileName:String)->String{
+    func ReadFile(_ fileName:String)->String{
         
-        let bundle = NSBundle.mainBundle()
-        let myFilePath = bundle.pathForResource(fileName, ofType: "json")
-        var error:NSError?
-        var content:String = String(contentsOfFile: myFilePath!, encoding: NSUTF8StringEncoding, error: &error)!
-        return content;
+        let bundle = Bundle.main
+        let myFilePath = bundle.path(forResource: fileName, ofType: "json")
+        
+        //var content:String = String(contentsOfFile: myFilePath!, encoding: String.Encoding.utf8, error: &error)!
+        do{
+            let content:String = try String(contentsOfFile: myFilePath!, encoding: String.Encoding.utf8)
+            return content;
+        }
+        catch{
+        }
+        return "Error"
     }
     
-    func writeFile(fileName:String,fileContent:NSString)->Bool{
+    func writeFile(_ fileName:String,fileContent:NSString)->Bool{
         
         return true;
     }

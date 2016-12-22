@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		149FF1DF1E0B54AB000A27D0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149FF1DE1E0B54AB000A27D0 /* HomeViewController.swift */; };
 		787580911A250EE200BC6245 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787580901A250EE200BC6245 /* CollectionViewCell.swift */; };
 		787580971A25130D00BC6245 /* appicon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 787580931A25130D00BC6245 /* appicon.jpg */; };
 		787580981A25130D00BC6245 /* holder.png in Resources */ = {isa = PBXBuildFile; fileRef = 787580941A25130D00BC6245 /* holder.png */; };
@@ -19,22 +20,12 @@
 		95E053511A23427D00D37F32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E0534F1A23427D00D37F32 /* Main.storyboard */; };
 		95E053531A23427D00D37F32 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E053521A23427D00D37F32 /* Images.xcassets */; };
 		95E053561A23427D00D37F32 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E053541A23427D00D37F32 /* LaunchScreen.xib */; };
-		95E053621A23427E00D37F32 /* iNewsFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E053611A23427E00D37F32 /* iNewsFeedTests.swift */; };
 		95E053711A2375C100D37F32 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E053701A2375C100D37F32 /* FileManager.swift */; };
 		95E053731A237B3500D37F32 /* Settings.json in Resources */ = {isa = PBXBuildFile; fileRef = 95E053721A237B3500D37F32 /* Settings.json */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		95E0535C1A23427E00D37F32 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 95E0533E1A23427C00D37F32 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 95E053451A23427D00D37F32;
-			remoteInfo = iNewsFeed;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		149FF1DE1E0B54AB000A27D0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		787580901A250EE200BC6245 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewCell.swift; path = CustomClasses/CollectionViewCell.swift; sourceTree = "<group>"; };
 		787580931A25130D00BC6245 /* appicon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = appicon.jpg; sourceTree = "<group>"; };
 		787580941A25130D00BC6245 /* holder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = holder.png; sourceTree = "<group>"; };
@@ -49,7 +40,6 @@
 		95E053501A23427D00D37F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95E053521A23427D00D37F32 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		95E053551A23427D00D37F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		95E0535B1A23427E00D37F32 /* iNewsFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iNewsFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E053601A23427E00D37F32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95E053611A23427E00D37F32 /* iNewsFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iNewsFeedTests.swift; sourceTree = "<group>"; };
 		95E053701A2375C100D37F32 /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileManager.swift; path = CustomClasses/FileManager.swift; sourceTree = "<group>"; };
@@ -58,13 +48,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		95E053431A23427D00D37F32 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95E053581A23427E00D37F32 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -98,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				95E053461A23427D00D37F32 /* iNewsFeed.app */,
-				95E0535B1A23427E00D37F32 /* iNewsFeedTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,6 +93,7 @@
 				95E0536F1A23759400D37F32 /* CustomClasses */,
 				95E0534B1A23427D00D37F32 /* AppDelegate.swift */,
 				95E0534D1A23427D00D37F32 /* ViewController.swift */,
+				149FF1DE1E0B54AB000A27D0 /* HomeViewController.swift */,
 				78C4D7BA1A23CB2000DD3BB3 /* SettingsViewController.swift */,
 				95E0534F1A23427D00D37F32 /* Main.storyboard */,
 				95E053521A23427D00D37F32 /* Images.xcassets */,
@@ -175,39 +158,18 @@
 			productReference = 95E053461A23427D00D37F32 /* iNewsFeed.app */;
 			productType = "com.apple.product-type.application";
 		};
-		95E0535A1A23427E00D37F32 /* iNewsFeedTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 95E053681A23427E00D37F32 /* Build configuration list for PBXNativeTarget "iNewsFeedTests" */;
-			buildPhases = (
-				95E053571A23427E00D37F32 /* Sources */,
-				95E053581A23427E00D37F32 /* Frameworks */,
-				95E053591A23427E00D37F32 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				95E0535D1A23427E00D37F32 /* PBXTargetDependency */,
-			);
-			name = iNewsFeedTests;
-			productName = iNewsFeedTests;
-			productReference = 95E0535B1A23427E00D37F32 /* iNewsFeedTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		95E0533E1A23427C00D37F32 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Iappscrazy;
 				TargetAttributes = {
 					95E053451A23427D00D37F32 = {
 						CreatedOnToolsVersion = 6.1;
-					};
-					95E0535A1A23427E00D37F32 = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 95E053451A23427D00D37F32;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -225,7 +187,6 @@
 			projectRoot = "";
 			targets = (
 				95E053451A23427D00D37F32 /* iNewsFeed */,
-				95E0535A1A23427E00D37F32 /* iNewsFeedTests */,
 			);
 		};
 /* End PBXProject section */
@@ -246,13 +207,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95E053591A23427E00D37F32 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -265,27 +219,12 @@
 				787580911A250EE200BC6245 /* CollectionViewCell.swift in Sources */,
 				95E0534C1A23427D00D37F32 /* AppDelegate.swift in Sources */,
 				78C4D7BB1A23CB2000DD3BB3 /* SettingsViewController.swift in Sources */,
+				149FF1DF1E0B54AB000A27D0 /* HomeViewController.swift in Sources */,
 				78C4D7B71A23BAC900DD3BB3 /* FeedData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95E053571A23427E00D37F32 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				95E053621A23427E00D37F32 /* iNewsFeedTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		95E0535D1A23427E00D37F32 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 95E053451A23427D00D37F32 /* iNewsFeed */;
-			targetProxy = 95E0535C1A23427E00D37F32 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		95E0534F1A23427D00D37F32 /* Main.storyboard */ = {
@@ -320,15 +259,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -341,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -363,8 +306,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -372,15 +317,17 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -392,9 +339,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: balagurubaran kalingarayan (7LJW83T65D)";
 				INFOPLIST_FILE = iNewsFeed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.britishairwaysent.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b8b7b8c3-a9d6-4732-a612-1c2324f8ac5d";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -404,43 +354,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: balagurubaran kalingarayan (7LJW83T65D)";
 				INFOPLIST_FILE = iNewsFeed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.britishairwaysent.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b8b7b8c3-a9d6-4732-a612-1c2324f8ac5d";
-			};
-			name = Release;
-		};
-		95E053691A23427E00D37F32 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = iNewsFeedTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iNewsFeed.app/iNewsFeed";
-			};
-			name = Debug;
-		};
-		95E0536A1A23427E00D37F32 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = iNewsFeedTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iNewsFeed.app/iNewsFeed";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -461,15 +380,6 @@
 			buildConfigurations = (
 				95E053661A23427E00D37F32 /* Debug */,
 				95E053671A23427E00D37F32 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		95E053681A23427E00D37F32 /* Build configuration list for PBXNativeTarget "iNewsFeedTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				95E053691A23427E00D37F32 /* Debug */,
-				95E0536A1A23427E00D37F32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

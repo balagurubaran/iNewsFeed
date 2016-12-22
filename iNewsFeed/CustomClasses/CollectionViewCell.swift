@@ -16,7 +16,7 @@ class CollectionViewCell: UICollectionViewCell {
     func setRoundCorner() {
         self.contentView.layer.cornerRadius = 2.0;
         self.contentView.layer.borderWidth = 1.0;
-        self.contentView.layer.borderColor = UIColor.brownColor().CGColor;
+        self.contentView.layer.borderColor = UIColor.brown.cgColor;
         self.contentView.layer.masksToBounds = true;
         
     }
