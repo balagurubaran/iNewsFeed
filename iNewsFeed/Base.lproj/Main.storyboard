@@ -25,6 +25,10 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5KQ-QN-8KY">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="E9w-9K-X1G" appends="YES" id="Lnw-oW-Acw"/>
+                                </connections>
                             </webView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5m0-8Q-nDz">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="667"/>
@@ -64,6 +68,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="MoreButton" destination="pht-D2-6Rt" id="dHy-Rt-lNt"/>
                         <outlet property="SettingsTableView" destination="5m0-8Q-nDz" id="Mkq-dQ-hGA"/>
                         <outlet property="SideMenuWidth" destination="lor-hk-fs0" id="lMn-IT-jSV"/>
                         <outlet property="WebViewTopMargin" destination="V5x-qd-wHd" id="Qqj-wl-oSv"/>
@@ -72,6 +77,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="48m-2a-SOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="E9w-9K-X1G">
+                    <connections>
+                        <action selector="NewsGestureAction:" destination="ZB8-4u-qjx" id="7oE-cd-upu"/>
+                        <outlet property="delegate" destination="ZB8-4u-qjx" id="RFp-XF-g5o"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="288.80000000000001" y="-624.73763118440786"/>
         </scene>

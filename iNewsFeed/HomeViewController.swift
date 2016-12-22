@@ -20,6 +20,7 @@ class HomeViewController: UIViewController,UIWebViewDelegate,UITableViewDataSour
     
     let feedDataParserObejct = FeedSettingsDataParser()
     
+    @IBOutlet weak var MoreButton: UIButton!
     let animationDuration:Float = 0.8
     
     @IBOutlet weak var SettingsTableView: UITableView!
@@ -32,6 +33,7 @@ class HomeViewController: UIViewController,UIWebViewDelegate,UITableViewDataSour
     @IBOutlet weak var WebViewTopMargin: NSLayoutConstraint!
     override func viewDidLoad() {
         SideMenuWidth.constant = 0;
+        MoreButton.isHidden = true
         let fm = FileManger()
         let fileContent : NSString =  fm.ReadFile("Settings") as NSString
         feedDataParserObejct.parseSettingsJsonData(fileContent)
@@ -45,6 +47,22 @@ class HomeViewController: UIViewController,UIWebViewDelegate,UITableViewDataSour
 
     }
     
+    @IBAction func NewsGestureAction(_ sender: UISwipeGestureRecognizer) {
+        if(sender.direction == .right){
+            UIView.animate(withDuration: TimeInterval(animationDuration)) { () -> Void in
+                self.SideMenuWidth.constant = 240
+                self.buttonLeftMargin.constant = 230
+                self.WebViewTopMargin.constant = 45
+                self.MoreButton.isHidden = false
+                self.MoreButton.transform = CGAffineTransform.init(rotationAngle: 180*3.14/180);
+
+                self.view.layoutIfNeeded()
+            }
+
+        }
+        
+    }
+ 
     @IBAction func MoreButton(_ sender: Any) {
         
         if(SideMenuWidth.constant == 0){
@@ -56,13 +74,20 @@ class HomeViewController: UIViewController,UIWebViewDelegate,UITableViewDataSour
             }
             
         }else{
-            UIView.animate(withDuration: TimeInterval(animationDuration/2)) { () -> Void in
-                self.SideMenuWidth.constant = 0
-                self.buttonLeftMargin.constant = -5
-                self.WebViewTopMargin.constant = 0
-                self.view.layoutIfNeeded()
-            }
+           closeButtonAnimation()
         }
+    }
+    
+    func closeButtonAnimation(){
+        UIView.animate(withDuration: TimeInterval(animationDuration/2), animations: {
+            self.SideMenuWidth.constant = 0
+            self.buttonLeftMargin.constant = -5
+            self.WebViewTopMargin.constant = 0
+            self.MoreButton.transform = CGAffineTransform.init(rotationAngle: 0);
+            self.view.layoutIfNeeded()
+        }, completion: { (Bool) in
+            self.MoreButton.isHidden = true
+        })
     }
     
     func loadPage(){
@@ -89,13 +114,7 @@ class HomeViewController: UIViewController,UIWebViewDelegate,UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedPaper = filteredSettingsData.object(at: indexPath.row) as! FeedSettingData
-        UIView.animate(withDuration: TimeInterval(animationDuration/2)) { () -> Void in
-            self.SideMenuWidth.constant = 0
-            self.buttonLeftMargin.constant = -5
-            self.WebViewTopMargin.constant = 0
-            self.view.layoutIfNeeded()
-        }
-    
+        closeButtonAnimation()
         loadPage()
      }
     
