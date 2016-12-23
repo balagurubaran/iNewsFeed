@@ -18,6 +18,8 @@ class FeedSettingData{
     var feedSettingName: NSString = ""
 }
 
+var allCategory:NSArray = NSArray()
+
 class FeedSettingsDataParser{
     
     func parseSettingsJsonData(_ jsonContent:NSString){
@@ -25,6 +27,7 @@ class FeedSettingsDataParser{
         
         do {
             if let boardsDictionary: NSDictionary = try JSONSerialization.jsonObject(with: fileData, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary{
+                allCategory = boardsDictionary.allKeys as NSArray
                 for key in boardsDictionary.allKeys{
                     let eachDataArray : NSArray = boardsDictionary.object(forKey: key) as! NSArray
                     for eachData in eachDataArray{
@@ -40,7 +43,6 @@ class FeedSettingsDataParser{
         }catch{
             
         }
-        
     }
     
     func getAllDataForSettings(_ settingsString:NSString)->NSMutableArray{

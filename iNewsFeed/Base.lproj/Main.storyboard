@@ -24,7 +24,7 @@
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5KQ-QN-8KY">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="E9w-9K-X1G" appends="YES" id="Lnw-oW-Acw"/>
@@ -36,6 +36,16 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="lor-hk-fs0"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="44" id="AFU-lG-jDo" customClass="CustomCell" customModule="iNewsFeed" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AFU-lG-jDo" id="3sy-IO-WsZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="ZB8-4u-qjx" id="tiE-L5-uhU"/>
                                     <outlet property="delegate" destination="ZB8-4u-qjx" id="cii-9h-EUk"/>
@@ -53,7 +63,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.3317810793717702" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LFh-Pi-QAc" firstAttribute="top" secondItem="5KQ-QN-8KY" secondAttribute="bottom" id="02K-SE-Aqh"/>
                             <constraint firstItem="5m0-8Q-nDz" firstAttribute="top" secondItem="RaU-bE-ONr" secondAttribute="bottom" id="0EY-CF-wZm"/>
@@ -110,11 +120,6 @@
                                         <state key="normal" backgroundImage="more.png">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="yaC-zi-MHW" kind="popoverPresentation" popoverAnchorView="LeJ-Fb-xlu" id="FRn-2T-b60">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                            </segue>
-                                        </connections>
                                     </button>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="u5P-xR-ade">
                                         <rect key="frame" x="308" y="12" width="37" height="37"/>
@@ -182,11 +187,11 @@
                         <viewControllerLayoutGuide type="bottom" id="dvd-rC-zH3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5x8-Tr-oTu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pKy-hM-tEK">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="29"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
                                 <color key="backgroundColor" red="0.87470453979999996" green="0.4662407637" blue="0.2591256797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="Politics"/>
@@ -201,7 +206,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ffl-bm-l51">
-                                <rect key="frame" x="0.0" y="28" width="600" height="522"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="589"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -211,7 +216,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYV-Xv-Txu">
-                                <rect key="frame" x="277" y="562" width="46" height="30"/>
+                                <rect key="frame" x="164.5" y="629" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HYV-Xv-Txu" secondAttribute="height" multiplier="23:15" id="8E7-9t-vSP"/>
                                 </constraints>

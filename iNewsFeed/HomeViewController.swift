@@ -20,6 +20,8 @@ class HomeViewController: UIViewController,UIWebViewDelegate,UITableViewDataSour
     
     let feedDataParserObejct = FeedSettingsDataParser()
     
+    var selectedRow = -1;
+    
     @IBOutlet weak var MoreButton: UIButton!
     let animationDuration:Float = 0.8
     
@@ -41,10 +43,17 @@ class HomeViewController: UIViewController,UIWebViewDelegate,UITableViewDataSour
         webView.scalesPageToFit = true
         webView.contentMode = UIViewContentMode.scaleToFill
         
-        SettingsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        SettingsTableView.register(CustomCell.self, forCellReuseIdentifier: "cell")
+        
         filteredSettingsData = feedSettingsDataObject.getAllDataForSettings("Sports")
         SettingsTableView.reloadData()
+        let myFilePath = Bundle.main.path(forResource: "bg", ofType: "png")
 
+        let bgColor:UIColor = UIColor.init(patternImage: UIImage.init(contentsOfFile: myFilePath!)!)
+        webView.backgroundColor = bgColor
+        self.view.backgroundColor = bgColor
+        webView.scrollView.backgroundColor = UIColor.clear
+        
     }
     
     @IBAction func NewsGestureAction(_ sender: UISwipeGestureRecognizer) {
@@ -100,23 +109,42 @@ class HomeViewController: UIViewController,UIWebViewDelegate,UITableViewDataSour
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredSettingsData.count;
+        return allCategory.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = (tableView.dequeueReusableCell(withIdentifier: "cell"))! as UITableViewCell
+        let cell: CustomCell = (tableView.dequeueReusableCell(withIdentifier: "cell"))! as! CustomCell
         
-        let feedData:FeedSettingData = filteredSettingsData.object(at: indexPath.row) as! FeedSettingData
-        cell.textLabel?.text = feedData.feedSettingName as String
+        //let feedData:FeedSettingData = filteredSettingsData.object(at: indexPath.row) as! FeedSettingData
+        //cell.textLabel?.text = feedData.feedSettingName as String
+        
+        cell.textLabel?.text = allCategory[indexPath.row] as? String
+        
         return cell
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedPaper = filteredSettingsData.object(at: indexPath.row) as! FeedSettingData
+      /*  selectedPaper = filteredSettingsData.object(at: indexPath.row) as! FeedSettingData
         closeButtonAnimation()
         loadPage()
+         */
+        
+        if(selectedRow != indexPath.row){
+            selectedRow =  indexPath.row;
+        }else{
+            selectedRow = -1
+        }
+        SettingsTableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
      }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        print(selectedRow)
+        if(selectedRow == indexPath.row){
+            return 100.0;
+        }
+        return 44.0;
+    }
     
     override var prefersStatusBarHidden : Bool {
         return true

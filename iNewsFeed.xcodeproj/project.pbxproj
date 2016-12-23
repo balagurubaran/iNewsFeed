@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		149FF1DF1E0B54AB000A27D0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149FF1DE1E0B54AB000A27D0 /* HomeViewController.swift */; };
-		787580911A250EE200BC6245 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787580901A250EE200BC6245 /* CollectionViewCell.swift */; };
+		149FF1E31E0B8CFE000A27D0 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 149FF1E21E0B8CFE000A27D0 /* bg.png */; };
+		787580911A250EE200BC6245 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787580901A250EE200BC6245 /* CustomCell.swift */; };
 		787580971A25130D00BC6245 /* appicon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 787580931A25130D00BC6245 /* appicon.jpg */; };
 		787580981A25130D00BC6245 /* holder.png in Resources */ = {isa = PBXBuildFile; fileRef = 787580941A25130D00BC6245 /* holder.png */; };
 		787580991A25130D00BC6245 /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = 787580951A25130D00BC6245 /* more.png */; };
@@ -26,7 +27,8 @@
 
 /* Begin PBXFileReference section */
 		149FF1DE1E0B54AB000A27D0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		787580901A250EE200BC6245 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewCell.swift; path = CustomClasses/CollectionViewCell.swift; sourceTree = "<group>"; };
+		149FF1E21E0B8CFE000A27D0 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		787580901A250EE200BC6245 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCell.swift; path = CustomClasses/CustomCell.swift; sourceTree = "<group>"; };
 		787580931A25130D00BC6245 /* appicon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = appicon.jpg; sourceTree = "<group>"; };
 		787580941A25130D00BC6245 /* holder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = holder.png; sourceTree = "<group>"; };
 		787580951A25130D00BC6245 /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				787580941A25130D00BC6245 /* holder.png */,
 				787580951A25130D00BC6245 /* more.png */,
 				787580961A25130D00BC6245 /* settings.png */,
+				149FF1E21E0B8CFE000A27D0 /* bg.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -131,7 +134,7 @@
 		95E0536F1A23759400D37F32 /* CustomClasses */ = {
 			isa = PBXGroup;
 			children = (
-				787580901A250EE200BC6245 /* CollectionViewCell.swift */,
+				787580901A250EE200BC6245 /* CustomCell.swift */,
 				95E053721A237B3500D37F32 /* Settings.json */,
 				95E053701A2375C100D37F32 /* FileManager.swift */,
 			);
@@ -169,7 +172,9 @@
 				TargetAttributes = {
 					95E053451A23427D00D37F32 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = USLGQG74CE;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -196,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				149FF1E31E0B8CFE000A27D0 /* bg.png in Resources */,
 				7875809A1A25130D00BC6245 /* settings.png in Resources */,
 				787580971A25130D00BC6245 /* appicon.jpg in Resources */,
 				95E053511A23427D00D37F32 /* Main.storyboard in Resources */,
@@ -216,7 +222,7 @@
 			files = (
 				95E053711A2375C100D37F32 /* FileManager.swift in Sources */,
 				95E0534E1A23427D00D37F32 /* ViewController.swift in Sources */,
-				787580911A250EE200BC6245 /* CollectionViewCell.swift in Sources */,
+				787580911A250EE200BC6245 /* CustomCell.swift in Sources */,
 				95E0534C1A23427D00D37F32 /* AppDelegate.swift in Sources */,
 				78C4D7BB1A23CB2000DD3BB3 /* SettingsViewController.swift in Sources */,
 				149FF1DF1E0B54AB000A27D0 /* HomeViewController.swift in Sources */,
@@ -338,12 +344,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: balagurubaran kalingarayan (7LJW83T65D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = USLGQG74CE;
 				INFOPLIST_FILE = iNewsFeed/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.britishairwaysent.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iappscrazy.uknews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b8b7b8c3-a9d6-4732-a612-1c2324f8ac5d";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -353,12 +362,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: balagurubaran kalingarayan (7LJW83T65D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = USLGQG74CE;
 				INFOPLIST_FILE = iNewsFeed/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.britishairwaysent.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iappscrazy.uknews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b8b7b8c3-a9d6-4732-a612-1c2324f8ac5d";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
